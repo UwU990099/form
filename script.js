@@ -79,3 +79,6 @@ function loadTableData() {
         }
     }
 }
+
+// Load existing data on page load
+window.onload = loadTableData;
