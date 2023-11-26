@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Data Table</title>
+</head>
+<body>
+    <div class="container">
+        <table id="data-table">
+            <!-- Table header -->
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Phone</th>
+                </tr>
+            </thead>
+            <!-- Table body will be populated dynamically -->
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Load existing data on page load
+        window.onload = loadTableData;
+    </script>
+</body>
+</html>
