@@ -38,8 +38,13 @@ function saveDataToLocalStorage() {
     var tableData = [];
 
     // Get table rows
-    var table = document.getElementById('data-table').getElementsByTagName('tbody')[0];
-    var rows = table.rows;
+    var table = document.getElementById('data-table');
+    if (!table) return; // Check if the table exists
+
+    var tbody = table.getElementsByTagName('tbody')[0];
+    if (!tbody) return; // Check if tbody exists
+
+    var rows = tbody.rows;
 
     // Iterate through rows and store data
     for (var i = 0; i < rows.length; i++) {
@@ -64,10 +69,14 @@ function loadTableData() {
         var tableData = JSON.parse(storedData);
 
         // Populate the table with stored data
-        var table = document.getElementById('data-table').getElementsByTagName('tbody')[0];
+        var table = document.getElementById('data-table');
+        if (!table) return; // Check if the table exists
+
+        var tbody = table.getElementsByTagName('tbody')[0];
+        if (!tbody) return; // Check if tbody exists
 
         for (var i = 0; i < tableData.length; i++) {
-            var newRow = table.insertRow(table.rows.length);
+            var newRow = tbody.insertRow(tbody.rows.length);
 
             var cell1 = newRow.insertCell(0);
             var cell2 = newRow.insertCell(1);
